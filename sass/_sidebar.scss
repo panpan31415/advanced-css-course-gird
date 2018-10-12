@@ -4,10 +4,21 @@
     grid-row: 1 / -1;
     display: flex;
     justify-content: center;
+    
+    @media only screen and (max-width: $bp-large) {
+        grid-column: 1 / -1;
+        grid-row: 1 / span 1;
+        justify-content: flex-end;
+        align-items: center;
+    }
 }
 
 .nav-btn {
     margin-top:4rem;
+    @media only screen and (max-width: $bp-large) {
+        margin-top:0;
+        padding-right: 3rem;
+    }
     cursor: pointer;
     &,
     &::before,
@@ -26,5 +37,18 @@
     &::after {
         content: "";
         transform: translateY(13px);
+    }
+
+    @media only screen and (max-width: $bp-large) {
+        margin-top:0;
+        margin-right: 3rem;
+        &::before {
+            content: "";
+            transform: translateY(-12px);
+        }
+        &::after {
+            content: "";
+            transform: translateY(10px);
+        }
     }
 }
